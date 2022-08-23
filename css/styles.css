@@ -661,7 +661,7 @@ p {
 }
 
 .social-title {
-  display: inline-block;
+  display: block;
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -689,6 +689,41 @@ p {
   margin-left: 70px;
 }
 
+.footer-sub {
+  margin-left: 93px;
+}
+
+.sub-box{
+  display: flex;
+  justify-content: center;
+}
+
+.sub-box > .submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-input {
+  display: inline-block;
+  width: 358px;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 12px;
+
+  background-color: var(--primary-black-color);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.icon-send {
+  margin-left: 10px;
+}
 /* Модальне вікно */
 .backdrop {
   position: fixed;
@@ -716,6 +751,7 @@ p {
 
   width: 528px;
   height: 581px;
+  padding: 40px;
 
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -748,4 +784,179 @@ p {
 .modal-close:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
+}
+
+.form-title {
+  display: block;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+}
+
+.form-lable {
+  position: relative;
+
+  display: block;
+
+  transition: color 250ms var(--primary-animation);
+}
+
+.lable-name {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.form-list {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.form-list > .items:not(.form-list > .items:last-child) {
+  margin-bottom: 10px;
+}
+
+.lable-input {
+  width: 100%;
+  height: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 42px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms var(--primary-animation);
+}
+
+.lable-textarea {
+  height: 120px;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  resize: none;
+}
+
+.lable-textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.lable-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+}
+
+.form-chech {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  color: var(--title-text-color);
+}
+
+.checkbox-text {
+  line-height: 1.71;
+  color: var(--primary-text-color);
+}
+
+.checkbox-linc {
+  color: var(--accent-color);
+}
+
+.check-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.check-on {
+  opacity: 0;
+
+  transition: opacity 250ms var(--primary-animation);
+}
+
+.check-off {
+  transition: opacity 250ms var(--primary-animation);
+}
+
+.checkbox:checked ~ .check-on {
+  opacity: 1;
+}
+
+.checkbox:checked ~ .check-off {
+  opacity: 0;
+}
+
+/* Варіант фокуса на lable  */
+
+.form-lable:hover,
+.form-lable:focus,
+.form-lable:focus-within {
+  color: var(--accent-color);
+}
+
+.form-lable:hover > .lable-input,
+.form-lable:focus > .lable-input,
+.form-lable:focus-within > .lable-input {
+  border-color: var(--accent-color);
+}
+
+/* Варіант фокуса на input  */
+
+/* .lable-input:hover,
+.lable-input:focus,
+.lable-input:focus-within {
+  border-color: var(--accent-color);
+}
+
+.lable-input:hover + .lable-icon,
+.lable-input:focus + .lable-icon,
+.lable-input:focus-within + .lable-icon {
+  color: var(--accent-color);
+} */
+
+/* .lable-input:focus-visible{
+  outline: -1px solid var(--accent-color);
+  
+} */
+
+.submit-btn {
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  background-color: var(--accent-color);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+}
+
+.submit-btn:hover {
+  cursor: pointer;
 }
