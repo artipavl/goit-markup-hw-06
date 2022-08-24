@@ -693,7 +693,7 @@ p {
   margin-left: 93px;
 }
 
-.sub-box{
+.sub-box {
   display: flex;
   justify-content: center;
 }
@@ -716,6 +716,11 @@ p {
 
   background-color: var(--primary-black-color);
 
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--primary-white-color);
+
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
@@ -728,9 +733,20 @@ p {
   border-color: var(--accent-color);
 }
 
+.email-input::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .icon-send {
   margin-left: 10px;
 }
+
 /* Модальне вікно */
 .backdrop {
   position: fixed;
@@ -757,7 +773,6 @@ p {
   transform: translate(-50%, -50%);
 
   width: 528px;
-  height: 581px;
   padding: 40px;
 
   background-color: var(--primary-white-color);
@@ -815,6 +830,7 @@ p {
 }
 
 .lable-name {
+  display: block;
   margin-bottom: 4px;
 
   font-size: 12px;
@@ -833,6 +849,19 @@ p {
   margin-bottom: 10px;
 }
 
+/* Варіант фокуса на lable  */
+.form-lable {
+  color: var(--title-text-color);
+}
+
+.form-lable:focus-within {
+  color: var(--accent-color);
+}
+
+.form-lable:focus-within > .lable-input {
+  border-color: var(--accent-color);
+}
+
 .lable-input {
   width: 100%;
   height: 40px;
@@ -844,10 +873,15 @@ p {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+
   transition: border 250ms var(--primary-animation);
 }
 
 .lable-textarea {
+  display: block;
   height: 120px;
   padding-right: 16px;
   padding-left: 16px;
@@ -856,6 +890,8 @@ p {
 }
 
 .lable-textarea::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.01em;
@@ -871,6 +907,7 @@ p {
 
 .form-chech {
   position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -888,20 +925,28 @@ p {
   color: var(--accent-color);
 }
 
-.check-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 .check-on {
+  margin-right: 8.38px;
+
   opacity: 0;
 
   transition: opacity 250ms var(--primary-animation);
 }
 
 .check-off {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
   transition: opacity 250ms var(--primary-animation);
+}
+
+.checkbox:focus-within ~ .icon {
+  fill: var(--accent-color);
+  outline: auto;
+
+  transition: fill 250ms var(--primary-animation);
 }
 
 .checkbox:checked ~ .check-on {
@@ -911,39 +956,6 @@ p {
 .checkbox:checked ~ .check-off {
   opacity: 0;
 }
-
-/* Варіант фокуса на lable  */
-
-.form-lable:hover,
-.form-lable:focus,
-.form-lable:focus-within {
-  color: var(--accent-color);
-}
-
-.form-lable:hover > .lable-input,
-.form-lable:focus > .lable-input,
-.form-lable:focus-within > .lable-input {
-  border-color: var(--accent-color);
-}
-
-/* Варіант фокуса на input  */
-
-/* .lable-input:hover,
-.lable-input:focus,
-.lable-input:focus-within {
-  border-color: var(--accent-color);
-}
-
-.lable-input:hover + .lable-icon,
-.lable-input:focus + .lable-icon,
-.lable-input:focus-within + .lable-icon {
-  color: var(--accent-color);
-} */
-
-/* .lable-input:focus-visible{
-  outline: -1px solid var(--accent-color);
-  
-} */
 
 .submit-btn {
   display: block;
