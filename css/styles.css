@@ -944,7 +944,9 @@ p {
 
 .checkbox:focus-within ~ .icon {
   fill: var(--accent-color);
-  outline: auto;
+  /* outline: auto; */
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
 
   transition: fill 250ms var(--primary-animation);
 }
